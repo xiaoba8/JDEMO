@@ -1,0 +1,51 @@
+<ul class="c2-horizontal-nav">
+    <li class="nav-item" ng-repeat="menu in items">
+        <a class="nav-item-link" ng-href="{{menu.l==undefined?'javascript:void(0);':menu.l}}">
+            {{menu.t}}<b class="arrow fa fa-angle-down" style="margin-left: 5px;" ng-if="menu.c.length > 0"></b>
+        </a>
+
+        <div class="sub-nav section-col-{{menu.$col}}" ng-if="menu.c.length > 0">
+            <div class="sub-nav-section" ng-repeat="section in menu.c" ng-if="menu.$hasSection">
+                <h3 ng-bind="section.t"></h3>
+                <ul>
+                    <li ng-repeat="submenu in section.c">
+                        <a ng-href="{{submenu.l}}"><i class="fa {{submenu.i}}"
+                                                      ng-if="submenu.i!=''"></i>{{submenu.t}}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <ul ng-if="!menu.$hasSection">
+                <li ng-repeat="submenu in menu.c">
+                    <a ng-href="{{submenu.l}}"><i class="fa {{submenu.i}}"
+                                                  ng-if="submenu.i!=''"></i>{{submenu.t}}</a>
+                </li>
+            </ul>
+        </div>
+    </li>
+    <li class="nav-item" ng-if="searchEnable">
+    	<input class="nav-search-text" type="search" placeholder="你想搜什么?" ng-model="search.queryStr" debounce="300"/>
+    	<div class="search-result-container" ng-show="search.queryStr !=''">
+    		<div class="search-process-block" ng-show="search.processing"></div>
+    		<div class="" ng-show="!search.processing">
+	    		<div class="search-result-category" ng-repeat="category in search.results">
+		    		<div class="search-result-category-title" >
+		    			<b>{{category.name}}</b>
+		    			<span class="pull-right" style="padding-right:10px;" ><a ng-click="goSearchPage(category.type,search.queryStr)">{{category.total}}个结果</a></span>
+		    		</div>
+		    		<ul class="search-result-list">
+		    			<li class="search-result-item" ng-class="{active:content.active}" ng-repeat="content in category.contents" ng-mouseenter="content.active=true" ng-mouseleave="content.active=false" ng-click="goResultPage(content)">
+		    			<span bind-html-unsafe="content.title"></span><br>
+		    			<span ng-if="category.type=='doc'" bind-html-unsafe="content.hl" class="light-grey"></span>
+		    			</li>
+		    		</ul>
+	    		</div>
+    		</div>
+        </div>
+    </li>
+	<li class="nav-item" ng-if="searchEnable">
+		<button class="nav-search-btn">
+			<span class="fa fa-search"></span>
+		</button>
+	</li>
+</ul>

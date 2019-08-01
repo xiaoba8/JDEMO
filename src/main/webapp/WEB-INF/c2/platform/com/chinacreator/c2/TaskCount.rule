@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="TaskCount" log="false" className="com.chinacreator.self.StatisticTotal" method="countTotalTask">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>任务统计</name>
+  <inputs/>
+  <outputs>
+    <output autoValue="Result" desc="" id="cot" name="方法返回值" type="int"/>
+  </outputs>
+  <params/>
+  <return signature="I" type="int"/>
+</CustomRule>

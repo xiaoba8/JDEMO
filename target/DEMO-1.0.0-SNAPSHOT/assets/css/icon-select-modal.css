@@ -1,0 +1,35 @@
+/* 图标选择页面样式  icon-select-modal.css*/
+.icon-section {
+  margin: 10px 0 0 20px;
+}
+.fontawesome-icon-list {
+  margin-top: 12px;
+}
+.fontawesome-icon-list .fa-hover a {
+  display: block;
+  color: #222222;
+  line-height: 32px;
+  height: 32px;
+  padding-left: 10px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.fontawesome-icon-list .fa-hover a .fa {
+  width: 32px;
+  font-size: 14px;
+  display: inline-block;
+  text-align: right;
+  margin-right: 10px;
+}
+.fontawesome-icon-list .fa-hover a:hover {
+  background-color: #1d9d74;
+  color: #ffffff;
+  text-decoration: none;
+}
+.fontawesome-icon-list .fa-hover a:hover .fa {
+  font-size: 28px;
+  vertical-align: -6px;
+}
+.fontawesome-icon-list .fa-hover a:hover .text-muted {
+  color: #bbe2d5;
+}

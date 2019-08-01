@@ -1,0 +1,59 @@
+<form name="form" class="page-content" ng-controller="datasourceFormController">
+    <div class="page-header">
+        <h1>
+            用户个人设置
+            <small><i class="icon-double-angle-right"></i>
+                Personal Settings
+            </small>
+        </h1>
+    </div>
+
+    <div class="form-horizontal" role="form">
+        <div>
+            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar"/>
+            <label class="lbl" for="ace-settings-navbar"> 固定顶部导航条</label>
+        </div>
+
+        <div>
+            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar"/>
+            <label class="lbl" for="ace-settings-sidebar"> 固定左侧导航条</label>
+        </div>
+
+        <div>
+            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs"/>
+            <label class="lbl" for="ace-settings-breadcrumbs"> 固定面包屑导航条</label>
+        </div>
+
+        <div>
+            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl"/>
+            <label class="lbl" for="ace-settings-rtl"> 页面从右到左显示</label>
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript">
+    $('#ace-settings-navbar').on('click',function () {
+        console.log('set');
+        ace.settings.navbar_fixed(this.checked);//@ ace-extra.js
+    }).each(function () {
+                this.checked = ace.settings.is('navbar', 'fixed')
+            });
+
+    $('#ace-settings-sidebar').on('click',function () {
+        console.log('set');
+        ace.settings.sidebar_fixed(this.checked);//@ ace-extra.js
+    }).each(function () {
+                this.checked = ace.settings.is('sidebar', 'fixed')
+            });
+
+    $('#ace-settings-breadcrumbs').on('click',function () {
+        console.log('set');
+        ace.settings.breadcrumbs_fixed(this.checked);//@ ace-extra.js
+    }).each(function () {
+                this.checked = ace.settings.is('breadcrumbs', 'fixed')
+            });
+
+    $('#ace-settings-rtl').removeAttr('checked').on('click', function () {
+        ace.switch_direction(jQuery);
+    });
+</script>

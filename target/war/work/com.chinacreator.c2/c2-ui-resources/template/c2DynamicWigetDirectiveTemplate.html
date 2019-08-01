@@ -1,0 +1,23 @@
+<div class="row">
+	<div ng-repeat="item in wigets" class="form-group col-sm-{{item.span}}">
+		<label class="control-label al-control-label" ng-style="item.labelStyle">{{item.label}}</label>
+		<div ng-style="item.wigetStyle" ng-if="item.type === 'input'">
+			<input class="form-control" id="{{item.id}}" name="{{item.name}}" ng-model="item.data" type="text"/>
+		</div>
+		<div ng-style="item.wigetStyle" ng-if="item.type === 'textarea'">
+			<textarea class="form-control" id="{{item.id}}" name="{{item.name}}" ng-model="item.data" rows="{{item.rows}}" cols="{{item.cols}}"></textarea>
+		</div>
+		<div ng-style="item.wigetStyle" ng-if="item.type === 'number'">
+			<input class="form-control" type="number" id="{{item.id}}" name="{{item.name}}" ng-model="item.data"/>
+		</div>
+		<div ng-style="item.wigetStyle" ng-if="item.type === 'radio'">
+			<label class="radio-inline" ng-repeat="r in item.options"><input id="{{item.id}}" name="{{item.name}}" ng-model="item.data" value="{{r.value}}" type="radio" class="ace"/><span class="lbl"> {{r.text}}</span></label>
+		</div>
+		<div ng-style="item.wigetStyle" ng-if="item.type === 'checkbox'">
+			<label class="checkbox-inline" ng-repeat="c in item.options"><input id="{{item.id}}" name="{{item.name}}" ng-model="c.checked" type="checkbox" class="ace"/><span class="lbl"> {{c.text}}</span></label>
+		</div>
+		<div ng-style="item.wigetStyle" ng-if="item.type === 'select'">
+			<select class="form-control" id="{{item.id}}" name="{{item.name}}" ng-model="item.data" ng-options="o.value as o.text for o in item.options"></select>
+		</div>
+	</div>
+</div>

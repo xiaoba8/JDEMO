@@ -1,0 +1,7 @@
+<div style="text-align: right;">
+	<ul class="pagination" style="margin: 1px;">
+		<li ng-class="{active:page.active,prev:page.prev,next:page.next,disabled:page.disabled}" ng-repeat="page in pages">
+		<a ng-click="paging(page.pageNum)" ng-bind-html="page.text"></a>
+		</li>
+	</ul>
+</div>

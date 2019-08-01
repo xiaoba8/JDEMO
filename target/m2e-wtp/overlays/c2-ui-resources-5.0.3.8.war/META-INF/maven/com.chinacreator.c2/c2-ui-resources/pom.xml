@@ -1,0 +1,217 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>c2-ui-resources</artifactId>
+	<packaging>war</packaging>
+	<name>[C2-UI]:标准库静态资源</name>
+	<description>标准组件库静态资源</description>
+	<parent>
+		<groupId>com.chinacreator.c2</groupId>
+		<artifactId>c2-ui-std</artifactId>
+		<version>5.0.3.8</version>
+	</parent>
+
+	<build>
+		<plugins>
+			<plugin>
+				<!-- YUI Compressor Maven压缩插件 -->
+				<groupId>net.alchim31.maven</groupId>
+				<artifactId>yuicompressor-maven-plugin</artifactId>
+				<version>1.3.2</version>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>compress</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<!-- 读取js,css文件采用UTF-8编码 -->
+					<encoding>UTF-8</encoding>
+					<!-- 不显示js可能的错误 -->
+					<jswarn>false</jswarn>
+					<nosuffix>true</nosuffix>
+					<aggregations>
+						<aggregation>
+							<!-- remove files after aggregation (default: false) <removeIncluded>true</removeIncluded> -->
+							<!-- insert new line after each concatenation (default: false) -->
+							<removeIncluded>false</removeIncluded>
+							<insertNewLine>false</insertNewLine>
+							<output>${project.build.directory}/${project.build.finalName}/assets/js/c2-all.js</output>
+							<!-- files to include, path relative to output's directory or absolute
+								path -->
+							<!--inputDir>base directory for non absolute includes, default to
+								parent dir of output</inputDir -->
+							<includes>
+								<include>${basedir}/src/main/libs/assets/js/bootstrap.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/angular.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/ace.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/angular-route.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/angular-resource.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/angular-sanitize.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/angular-ui.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/ng-file-upload-shim.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/ng-file-upload.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/ocLazyLoad.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/messenger.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/messenger-theme-flat.js</include>
+								<include>${basedir}/src/main/libs/assets/js/moment.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/moment-zh-cn.js</include>
+								<include>${basedir}/src/main/libs/assets/js/jquery-ui-core.min.js</include>
+<!-- 								<include>${basedir}/src/main/libs/assets/js/jquery-ui-draggable.min.js</include> -->
+								<include>${basedir}/src/main/libs/assets/js/jquery.waiting.min.js</include>
+
+								<include>${basedir}/src/main/libs/scripts/common.js</include>
+								<include>${basedir}/src/main/libs/scripts/services/services.js</include>
+								<include>${basedir}/src/main/libs/scripts/services/directiveServices.js</include>
+								<include>${basedir}/src/main/libs/scripts/interceptor/errorInterceptor.js</include>
+								<include>${basedir}/src/main/libs/scripts/interceptor/titleInterceptor.js</include>
+								<include>${basedir}/src/main/libs/scripts/interceptor/oauth2Interceptor.js</include>
+								<include>${basedir}/src/main/libs/scripts/directives/directives.js</include>
+								<include>${basedir}/src/main/libs/scripts/app.js</include>
+								<include>${basedir}/src/main/libs/scripts/app-breadcrumb.js</include>
+<!-- 								<include>${basedir}/src/main/libs/scripts/controllers/app-controllers.js</include> -->
+							</includes>
+							<!-- files to exclude, path relative to output's directory <excludes>
+								<exclude>**/*.pack.js</exclude> <exclude>**/compressed.css</exclude> </excludes> -->
+						</aggregation>
+						<aggregation>
+							<!-- remove files after aggregation (default: false) <removeIncluded>true</removeIncluded> -->
+							<!-- insert new line after each concatenation (default: false) -->
+							<removeIncluded>false</removeIncluded>
+							<insertNewLine>false</insertNewLine>
+							<output>${project.build.directory}/${project.build.finalName}/assets/js/c2-all-an.js</output>
+							<!-- files to include, path relative to output's directory or absolute
+								path -->
+							<!--inputDir>base directory for non absolute includes, default to
+								parent dir of output</inputDir -->
+							<includes>
+								<include>${basedir}/src/main/libs/assets/js/bootstrap.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/angular.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/ace.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/angular-route.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/angular-resource.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/angular-sanitize.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/angular-ui.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/ng-file-upload-shim.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/ng-file-upload.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/ocLazyLoad.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/messenger.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/messenger-theme-flat.js</include>
+								<include>${basedir}/src/main/libs/assets/js/moment.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/moment-zh-cn.js</include>
+								<include>${basedir}/src/main/libs/assets/js/jquery-ui-core.min.js</include>
+<!-- 								<include>${basedir}/src/main/libs/assets/js/jquery-ui-draggable.min.js</include> -->
+								<include>${basedir}/src/main/libs/assets/js/jquery.waiting.min.js</include>
+
+								<include>${basedir}/src/main/libs/scripts/common-an.js</include>
+								<include>${basedir}/src/main/libs/scripts/services/services.js</include>
+								<include>${basedir}/src/main/libs/scripts/services/directiveServices.js</include>
+								<include>${basedir}/src/main/libs/scripts/interceptor/errorInterceptor.js</include>
+								<include>${basedir}/src/main/libs/scripts/interceptor/titleInterceptor.js</include>
+								<include>${basedir}/src/main/libs/scripts/interceptor/oauth2Interceptor.js</include>
+								<include>${basedir}/src/main/libs/scripts/directives/directives.js</include>
+								<include>${basedir}/src/main/libs/scripts/app.js</include>
+								<include>${basedir}/src/main/libs/scripts/app-breadcrumb.js</include>
+<!-- 								<include>${basedir}/src/main/libs/scripts/controllers/app-controllers.js</include> -->
+							</includes>
+							<!-- files to exclude, path relative to output's directory <excludes>
+								<exclude>**/*.pack.js</exclude> <exclude>**/compressed.css</exclude> </excludes> -->
+						</aggregation>
+
+						<aggregation>
+							<!-- remove files after aggregation (default: false) <removeIncluded>true</removeIncluded> -->
+							<!-- insert new line after each concatenation (default: false) -->
+							<removeIncluded>false</removeIncluded>
+							<insertNewLine>false</insertNewLine>
+							<output>${project.build.directory}/${project.build.finalName}/assets/js/c2-all-tab.js</output>
+							<!-- files to include, path relative to output's directory or absolute
+								path -->
+							<!--inputDir>base directory for non absolute includes, default to
+								parent dir of output</inputDir -->
+							<includes>
+								<include>${basedir}/src/main/libs/assets/js/bootstrap.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/angular.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/ace.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/angular-route.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/angular-resource.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/angular-sanitize.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/angular-ui.min.js</include>
+ 								<include>${basedir}/src/main/libs/assets/js/ng-file-upload-shim.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/ng-file-upload.min.js</include>
+ 								<include>${basedir}/src/main/libs/assets/js/ocLazyLoad.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/messenger.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/messenger-theme-flat.js</include>
+								<include>${basedir}/src/main/libs/assets/js/moment.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/moment-zh-cn.js</include>
+								<include>${basedir}/src/main/libs/assets/js/jquery-ui-core.min.js</include>
+<!-- 								<include>${basedir}/src/main/libs/assets/js/jquery-ui-draggable.min.js</include> -->
+								<include>${basedir}/src/main/libs/assets/js/jquery.waiting.min.js</include>
+								<include>${basedir}/src/main/libs/assets/js/bootstrap-contextmenu.js</include>
+								
+								<include>${basedir}/src/main/libs/scripts/common.js</include>
+								<include>${basedir}/src/main/libs/scripts/services/services.js</include>
+								<include>${basedir}/src/main/libs/scripts/services/tabNavServices.js</include>
+								<include>${basedir}/src/main/libs/scripts/services/directiveServices.js</include>
+								<include>${basedir}/src/main/libs/scripts/interceptor/errorInterceptor.js</include>
+								<include>${basedir}/src/main/libs/scripts/interceptor/titleInterceptor-tab.js</include>
+								<include>${basedir}/src/main/libs/scripts/interceptor/oauth2Interceptor.js</include>
+								<include>${basedir}/src/main/libs/scripts/directives/directives.js</include>
+								<include>${basedir}/src/main/libs/scripts/directives/directives-tab.js</include>
+								<include>${basedir}/src/main/libs/scripts/app.js</include>
+								<include>${basedir}/src/main/libs/scripts/app-tab.js</include>
+<!-- 								<include>${basedir}/src/main/libs/scripts/controllers/app-controllers-tab.js</include> -->
+							</includes>
+							<!-- files to exclude, path relative to output's directory <excludes>
+								<exclude>**/*.pack.js</exclude> <exclude>**/compressed.css</exclude> </excludes> -->
+						</aggregation>
+
+						<aggregation>
+							<!-- remove files after aggregation (default: false) <removeIncluded>true</removeIncluded> -->
+							<!-- insert new line after each concatenation (default: false) -->
+							<removeIncluded>false</removeIncluded>
+							<insertNewLine>true</insertNewLine>
+							<output>${project.build.directory}/${project.build.finalName}/assets/css/c2-all.css</output>
+							<!-- include中填要引入文件相对于output目录的路径或绝对路径 -->
+							<includes>
+								<include>${basedir}/src/main/libs/assets/css/bootstrap.min.css</include>
+								<include>${basedir}/src/main/libs/assets/css/font-awesome.min.css</include>
+<!-- 								<include>${basedir}/src/main/libs/assets/css/jquery-ui.min.css</include> -->
+								<include>${basedir}/src/main/libs/assets/css/ace.min.css</include>
+								<include>${basedir}/src/main/libs/assets/css/pace.css</include>
+								<include>${basedir}/src/main/libs/assets/css/messenger.css</include>
+								<include>${basedir}/src/main/libs/assets/css/messenger-theme-flat.css</include>
+								<include>${basedir}/src/main/libs/site.css</include>
+							</includes>
+							<!-- files to exclude, path relative to output's directory <excludes>
+								<exclude>**/*.pack.js</exclude> <exclude>**/compressed.css</exclude> </excludes> -->
+						</aggregation>
+					</aggregations>
+				</configuration>
+
+			</plugin>
+			<plugin>
+	        <artifactId>maven-resources-plugin</artifactId>
+	        <version>2.7</version>
+	        <executions>
+	          <execution>
+	            <id>copy-resources</id>
+	            <phase>validate</phase>
+	            <goals>
+	              <goal>copy-resources</goal>
+	            </goals>
+	            <configuration>
+	              <outputDirectory>${project.build.directory}/${project.build.finalName}/js</outputDirectory>
+	              <resources>          
+	                <resource>
+	                  <directory>${basedir}/src/main/libs/scripts/controllers</directory>
+	                  <filtering>true</filtering>
+	                </resource>
+	              </resources>              
+	            </configuration>            
+	          </execution>
+	        </executions>
+	      </plugin>
+		</plugins>
+	</build>
+</project>

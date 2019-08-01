@@ -1,0 +1,870 @@
+/*用于控制表单页面对齐的CSS*/
+body, button, input, select, textarea, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Microsoft YaHei", 微软雅黑, STHei, 华文黑体, "Helvetica Neue",
+    Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #FFFFFF;
+    margin-right: 0px;
+}
+
+body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom {
+    margin-right: 0px;
+}
+
+.al-control-label {
+    float: left;
+    padding-top: 5px;
+    text-align: right;
+}
+
+.form-horizontal .btn-group {
+    margin-left: 85px;
+}
+
+.form-horizontal .btn-inline {
+    margin-left: 85px;
+}
+
+.form-horizontal .al-control-label {
+    width: 75px;
+}
+
+.form-horizontal .al-controls {
+    margin-left: 85px;
+}
+
+/*缺省行间距15px*/
+.form-group {
+    margin-bottom: 10px;
+}
+
+/*缺省行高34px*/
+.form-control {
+    height: 34px;
+}
+
+/*处理弹出类控件在Modal内部显示不正常的问题*/
+.datepicker {
+    z-index: 2000 !important;
+}
+
+.daterangepicker {
+    z-index: 2000 !important;
+}
+
+.radio .checkbox {
+    padding-left: 0px;
+}
+
+.ace-file-input {
+    height: 34px;
+    margin-bottom: 0px;
+}
+
+.ace-file-multiple {
+    height: auto !important;
+}
+
+/*固定浮动搜索条跟顶部的距离*/
+.nav-search {
+    top: 6px;
+}
+
+.modal-header {
+    height: 45px;
+    padding: 0px;
+    background: url("../img/dialog-radius-top-bg.png") repeat-x;
+    border-bottom: 1px solid #d1d1d1;
+    line-height: 45px;
+}
+
+.modal-header h4 {
+    float: left;
+    padding-left: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #666;
+}
+
+.popover-content {
+    line-height: normal;
+}
+
+button.modal-close {
+    position: absolute;
+    right: 17px;
+    top: 4px;
+    font-size: 32px;
+}
+
+.page-content {
+    padding: 0px;
+}
+
+.widget-box {
+    margin-left: -1px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.compact-page {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    border: none
+}
+
+.footer-in-blank .footer-inner {
+    left: 0px;
+}
+
+.footer .footer-inner .footer-content {
+    border-top: 1px solid #E5E5E5;
+}
+
+.fixed-height-container {
+    overflow: auto;
+}
+
+.bottom-bar {
+    position: relative;
+    min-height: 41px;
+    line-height: 40px;
+    padding: 0 12px 0 0;
+    display: block;
+}
+
+.bottom-bar.fixed, .bottom-bar.bottom-bar-fixed {
+    position: fixed;
+    right: 0;
+    bottom: 0px;
+    z-index: 1028;
+}
+
+.sidebar + .main-content .bottom-bar.fixed, .sidebar + .main-content .bottom-bar.bottom-bar-fixed {
+    left: 190px;
+}
+
+.compact.sidebar + .main-content .bottom-bar.fixed, .compact.sidebar + .main-content .bottom-bar.bottom-bar-fixed {
+    left: 105px;
+}
+
+.menu-min.sidebar + .main-content .bottom-bar.fixed, .menu-min.sidebar + .main-content .bottom-bar.bottom-bar-fixed {
+    left: 43px !important;
+}
+
+
+.c2-horizontal-nav {
+    float: left;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.c2-horizontal-nav ul {
+    list-style: none;
+}
+
+.c2-horizontal-nav .nav-item {
+    float: left;
+    position: relative;
+    list-style: none;
+}
+
+.c2-horizontal-nav .nav-item .nav-item-link, .c2-horizontal-nav .nav-item .nav-item-link:link, .c2-horizontal-nav .nav-item .nav-item-link:visited, .c2-horizontal-nav .nav-item .nav-item-link:hover, .c2-horizontal-nav .nav-item .nav-item-link:active {
+    display: block;
+    min-width: 85px;
+    height: 44px;
+    line-height: 44px;
+    outline: 0 none;
+    padding: 0 10px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.c2-horizontal-nav .nav-item:hover {
+    background-color: #193477;
+}
+
+.c2-horizontal-nav ul, .c2-horizontal-nav ol {
+    margin: 0;
+    padding: 0;
+}
+
+.c2-horizontal-nav .nav-item:hover .sub-nav {
+    display: block;
+}
+
+.c2-horizontal-nav .sub-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+    color: #000;
+    padding-bottom: 20px;
+    display: none;
+    z-index: 999;
+    zoom: 1;
+}
+
+.c2-horizontal-nav .sub-nav.section-col-1 {
+    width: 210px;
+}
+
+.c2-horizontal-nav .sub-nav.section-col-2 {
+    width: 390px;
+}
+
+.c2-horizontal-nav .sub-nav.section-col-3 {
+    width: 570px;
+}
+
+.c2-horizontal-nav .sub-nav.section-col-4 {
+    width: 750px;
+}
+
+.c2-horizontal-nav .sub-nav.section-col-1 ul li {
+    padding-left: 20px;
+    margin: 10px 0 0 0;
+    line-height: 100%;
+}
+
+.c2-horizontal-nav .sub-nav-section {
+    float: left;
+    width: 150px;
+    height: 138px;
+    margin: 20px 0 0 30px;
+    line-height: 30px;
+}
+
+.c2-horizontal-nav .sub-nav-section h3 {
+    color: #999;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 30px;
+    vertical-align: baseline;
+}
+
+.c2-horizontal-nav .sub-nav a {
+    display: inline-block;
+    line-height: 30px;
+    width: 145px;
+    text-decoration: none;
+}
+
+.c2-horizontal-nav .sub-nav a > i {
+    font-size: 16px;
+    font-style: normal;
+    /*margin-right: 5px;*/
+    width: 21px;
+}
+
+.c2-horizontal-nav .sub-nav a, .c2-horizontal-nav .sub-nav a:link, .c2-horizontal-nav .sub-nav a:visited {
+    color: #333;
+}
+
+.c2-horizontal-nav .sub-nav a:hover {
+    color: #0886e9;
+}
+
+
+.c2-horizontal-nav input[type="search"] {
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.c2-horizontal-nav input[type="search"]::-webkit-search-cancel-button,
+.c2-horizontal-nav input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+.c2-horizontal-nav input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+.c2-horizontal-nav button {
+    -webkit-appearance: button;
+    background: transparent;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+    padding: 0 10px;
+    text-transform: none;
+}
+
+.c2-horizontal-nav input[type="search"],
+.c2-horizontal-nav button {
+	border: 0;
+	line-height: 44px;
+	background: transparent;
+	color: #fff;
+	display: block;
+	position: relative;
+}
+
+.c2-horizontal-nav input[type="search"] {
+	display: none;
+	width: 177px;
+	padding:0 10px;
+}
+
+.c2-horizontal-nav input[type="search"]:focus {
+	background-color: #193477;
+}
+
+.c2-horizontal-nav input[type="search"]::-webkit-input-placeholder { color: #fff; }
+.c2-horizontal-nav input[type="search"]::-moz-placeholder { color: #fff; opacity: 1; }
+.c2-horizontal-nav input[type="search"]:-moz-placeholder { color: #fff; opacity: 1; }
+.c2-horizontal-nav input[type="search"]:-ms-input-placeholder { color: #fff; }
+
+.c2-horizontal-nav .search-result-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+    color: #000;
+    z-index: 999;
+    zoom: 1;
+    width: 570px;
+    display: none;
+}
+
+.c2-horizontal-nav .nav-search-text:focus+.search-result-container{
+	display: block;
+}
+
+.c2-horizontal-nav .search-result-category-title {
+	  background: #f6f6f6;
+  	  color: #555;
+  	  padding-left:10px;
+}
+
+.c2-horizontal-nav .search-process-block {
+	background: #FFF url(../../../../assets/css/loading.gif) no-repeat center center;
+  height: 50px;
+  position: relative;
+  margin:auto;
+  left: 0;
+  top: 0;
+}
+
+.widget-toolbar:before {
+    border: none;
+}
+
+.page-content.bottom-bar-fixed {
+    padding-bottom: 41px;
+}
+
+.compact-form-acitons {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.widget-box .compact-form-acitons {
+    margin-bottom: 0px;
+}
+
+.btn .caret {
+    margin-left: 0
+}
+
+@media only screen and (max-width: 991px) {
+    .bottom-bar.fixed, .bottom-bar.bottom-bar {
+        /*position: relative !important;*/
+        left: 0 !important;
+        /*right: auto !important;*/
+        /*bottom: 0px !important;*/
+        /*z-index: auto !important;*/
+    }
+
+    body.bottom-bar .ace-settings-container {
+        bottom: 0px;
+    }
+}
+
+.submit-progress .submit-progress-activity {
+    display: block;
+    z-index: 2000;
+    bottom: 15px;
+    right: 15px;
+    width: 14px;
+    height: 14px;
+    border: solid 2px transparent;
+    border-top-color: #29d;
+    border-left-color: #29d;
+    border-radius: 100px;
+    -webkit-animation: pace-spinner 400ms linear infinite;
+    -moz-animation: pace-spinner 400ms linear infinite;
+    -ms-animation: pace-spinner 400ms linear infinite;
+    -o-animation: pace-spinner 400ms linear infinite;
+    animation: pace-spinner 400ms linear infinite;
+}
+
+.submit-progress-inactive {
+    display: none;
+}
+
+@-webkit-keyframes pace-spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes pace-spinner {
+    0% {
+        -moz-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes pace-spinner {
+    0% {
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-ms-keyframes pace-spinner {
+    0% {
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pace-spinner {
+    0% {
+        transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+/*     暂不使用，会导致1440分辨率下底栏长度不够
+.page-content .bottom-bar.bottom-bar-fixed {
+    left: auto !important;
+    right: auto !important;
+}
+
+@media (min-width: 768px) {
+    .page-content .bottom-bar.bottom-bar-fixed {
+        width: 554px;
+    }
+    .main-container .menu-min + .main-content .bottom-bar.bottom-bar-fixed {
+        width: 701px;
+    }
+}
+@media (min-width: 992px) {
+    .page-content .bottom-bar.bottom-bar-fixed {
+        width: 774px;
+    }
+    .main-container .menu-min + .main-content .bottom-bar.bottom-bar-fixed {
+        width: 921px;
+    }
+}
+@media (min-width: 1200px) {
+    .page-content .bottom-bar.bottom-bar-fixed {
+        width: 974px;
+    }
+    .main-container .menu-min + .main-content .bottom-bar.bottom-bar-fixed {
+        width: 1121px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .ace-settings-container,
+    body.breadcrumbs-fixed .ace-settings-container {
+        bottom: 0px;
+    }
+}
+*/
+
+/*处理表格表头对不齐的问题*/
+/*表头高度*/
+.ui-jqgrid .ui-jqgrid-labels th{
+	height: 36px;
+}
+.ui-jqgrid .ui-jqgrid-htable th span.ui-jqgrid-resize {
+  height: 22px !important;
+}
+/* 表头背景色火狐浏览器兼容 */
+.ui-jqgrid .ui-jqgrid-htable .ui-jqgrid-labels .ui-state-default{
+	background: #f2f2f2 linear-gradient(to bottom, #f8f8f8 0px, #ececec 100%) repeat-x scroll 0 0;
+}
+/*表头分组时的高度*/
+.ui-jqgrid .jqg-third-row-header th{height: 22px;}
+/*表头分组时可调宽度时高度*/
+.ui-jqgrid .jqg-third-row-header th span.ui-jqgrid-resize {
+  height: 22px !important;
+}
+/*不显示表格默认的overlay*/
+.ui-jqgrid .jqgrid-overlay {
+  display: none;
+}
+.ui-jqgrid .ui-jqgrid-htable th div {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.ui-jqgrid .ui-search-table select {
+    padding: 0px 0px;
+    height: 21px;
+    margin: 0px;
+}
+
+.ui-jqgrid .ui-jqgrid-bdiv .drag-tr {
+    color: green;
+    font-size: 21px;
+    opacity: 1;
+}
+
+.ui-jqgrid .ui-search-input input, .ui-jqgrid .ui-search-input select {
+    height: 21px;
+}
+
+/*表格弹出框背景色*/
+.ui-jqdialog-content {
+    background: white !important;
+}
+
+/*表格表头默认居中*/
+.ui-jqgrid .ui-jqgrid-htable th div {
+    text-align: center;
+}
+
+.tab-content > .tab-pane {
+    width: 100%;
+}
+
+/*表格分页栏样式*/
+.ui-jqgrid .ui-jqgrid-pager {
+    background-color: #ffffff !important;
+    border-bottom: 0px !important;
+}
+
+/*jqGrid表格按钮样式*/
+.grid-btn {
+    border: 0px;
+}
+
+/*jqgrid表格树表缩进和图标(从jquryUI中截取)*/
+.ui-jqgrid .tree-wrap-ltr {
+    float: left;
+}
+
+.ui-widget-content .ui-jqgrid-bdiv .ui-icon {
+    background-image: url(/assets/images/ui-icons_2e83ff_256x240.png);
+}
+
+/*表格表头的no-transparent样式(有背景色的标题栏，类似widgetbox有边框样式)*/
+.ui-jqgrid .ui-userdata.no-transparent {
+    border: 1px solid #DDD;
+    border-bottom: 0px;
+    background: #f7f7f7;
+    background-image: -webkit-linear-gradient(top, #fff 0, #eee 100%);
+    background-image: linear-gradient(to bottom, #fff 0, #eee 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffeeeeee', GradientType=0);
+}
+
+.ui-jqgrid .ui-userdata.no-transparent .table-title {
+    padding-left: 5px;
+}
+
+/*radio组表单样式调整*/
+.radio-group{padding-top: 5px;}
+.radio{
+	height:30px;
+	margin-top:4px;
+	margin-bottom: 0;
+}
+
+/*必填项Lable样式*/
+.required-label {
+    font-weight: bold;
+}
+
+/*AngularUI css*/
+.nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer;
+}
+
+/*AngularUI tab框内容跑出去*/
+.tab-content > .active {
+    display: inline-block;
+}
+
+.tab-content > .tab-pane {
+    width: 100%;
+}
+
+/* 侧边栏菜单图标显示 */
+.nav-list > li .submenu > li a > .menu-icon {
+    display: block;
+    font-size: 14px;
+}
+
+/*处理breadcrumbs-fixed时页面内容被遮挡的问题*/
+.breadcrumbs-fixed + .page-content {
+    padding-top: 48px; /*breadcrumbs高度是41px*/
+}
+
+@media (min-width: 992px) {
+    .tab-fixed {
+        position: fixed !important;
+        right: 0 !important;
+        top: auto !important;
+        z-index: 1024;
+        background-color: #f5f5f5;
+    }
+}
+
+@media (min-width: 992px) {
+    .sidebar.compact + .main-content .tab-fixed {
+        left: 105px !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .sidebar + .main-content .tab-fixed {
+        left: 190px !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .sidebar.menu-min + .main-content .tab-fixed {
+        left: 43px !important;
+    }
+}
+
+.tab-fixed + .page-content {
+    padding-top: 40px !important;
+}
+
+/*tab页签变灰*/
+.nav-tabs > li > a {
+    background-color: transparent;
+}
+
+.btn-group > .btn-sm, .btn-group + .btn-sm {
+    border-width: 4px;
+}
+
+/*等待遮罩层样式*/
+.waiting-container {
+    min-height: 16px;
+    transition: opacity 0.25s;
+    opacity: 1;
+}
+
+.waiting-container.hidden {
+    opacity: 0;
+}
+
+.waiting-container.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.waiting-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.waiting-indicator {
+    width: 16px;
+    height: 16px;
+    background: url("ajax-loader-white.gif");
+}
+
+.waiting-indicator.center, .waiting-indicator.top, .waiting-indicator.bottom {
+    position: absolute;
+}
+
+.waiting-indicator.center {
+    top: 50%;
+    left: 50%;
+    margin: -8px 0 0 -8px;
+}
+
+/*原始值是padding:15px，如果内部的最外层元素width为100%，对话框会出现一条多余的白边*/
+.modal-body {
+    padding: 0px;
+    margin: 15px;
+}
+/*修复bootstrap升级后遮罩大小不正确的问题*/
+.modal-backdrop{
+    bottom:0;
+}
+
+/*jqgrid表格名称*/
+.table-title{font-size: 18px;color:#4383B4;height: 38px;line-height: 38px;float: left;}
+/*jqgrid表格表头分组添加下划线*/
+.ui-th-column-header {
+    border-bottom: 1px solid #E1E1E1;
+}
+
+/*jqgrid表头搜索框*/
+.table-search-house {
+    border: 1px solid #dce8f1;
+    background-color: #f1f4f7;
+    border-bottom-width: 0;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+/*jqGrid表格自己的验证提示框，如果表格在弹出框内部，提示框会被弹出框覆盖。*/
+#info_dialog {
+    z-index: 1060 !important;
+}
+
+.ui-icon-bullet {
+    background-position: -80px -144px;
+}
+
+.ui-icon-radio-off {
+    background-position: -96px -144px;
+}
+
+.ui-icon-radio-on {
+    background-position: -112px -144px;
+}
+
+.ui-icon-triangle-1-e {
+    background-position: -32px -16px;
+}
+
+.ui-icon-triangle-1-s {
+    background-position: -64px -16px;
+}
+
+.ui-icon-carat-1-e {
+    background-position: -32px 0;
+}
+
+.ui-icon-carat-1-s {
+    background-position: -64px 0;
+}
+
+.ui-icon-plus {
+    background-position: -16px -128px;
+}
+
+.ui-icon-plusthick {
+    background-position: -32px -128px;
+}
+
+.ui-icon-minus {
+    background-position: -48px -128px;
+}
+
+.ui-icon-minusthick {
+    background-position: -64px -128px;
+}
+
+.ui-icon-circle-plus {
+    background-position: 0 -192px;
+}
+
+.ui-icon-circle-minus {
+    background-position: -16px -192px;
+}
+
+.ui-icon-circle-triangle-e {
+    background-position: -48px -192px;
+}
+
+.ui-icon-circle-triangle-s {
+    background-position: -64px -192px;
+}
+
+.ui-icon-none {
+    background-position: -96px -240px;
+}
+
+/*radio，checkbox组，宽度对齐*/
+.radio-inline + .radio-inline, .checkbox-inline + .checkbox-inline {
+    margin-left: 0px;
+}
+
+#indexloading {
+    background: #FFF url(loading.gif) no-repeat center center;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+}
+
+/*处理各种input-addon有多重边框的问题*/
+.input-group-addon:first-child {
+    border-right: 0;
+}
+
+.input-group-addon:last-child {
+    border-left: 0;
+}
+
+.input-group-addon:not(:first-child):not(:last-child), .input-group-btn:not(:first-child):not(:last-child), .input-group .form-control:not(:first-child):not(:last-child) {
+    border-left: 0;
+    border-right: 0;
+}
+
+.no-border {
+    border: 0 !important;
+}
+
+/*btn-white样式改为背景色透明*/
+.btn.btn-white {
+    background-color: transparent !important;
+}
+
+/* span 带lable时单行模式样式 */
+.single-line{overflow: hidden;  text-overflow: ellipsis;  white-space: nowrap;}
+
+/* 日期时间选择控件弹窗可能被顶栏遮住的问题 */
+.dropdown-menu {
+	z-index:1035;
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="TaskChart" log="false" className="com.chinacreator.c2.Statistic" method="getSerieObj">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>图表</name>
+  <inputs>
+    <input collection="false" desc="" id="startDate" required="false" type="String"/>
+    <input collection="false" desc="" id="endDate" required="false" type="String"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="EchartData" name="方法返回值" type="com.chinacreator.c2.module.echart.EChartsData"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.startDate" name="startDate" signature="QString;" type="String" value="Input.startDate"/>
+    <param autoValue="Input.endDate" name="endDate" signature="QString;" type="String" value="Input.endDate"/>
+  </params>
+  <return signature="QEChartsData;" type="com.chinacreator.c2.module.echart.EChartsData"/>
+</CustomRule>

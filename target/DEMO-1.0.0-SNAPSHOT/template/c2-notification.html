@@ -1,0 +1,22 @@
+<li class="gree"><a data-toggle="dropdown" class="dropdown-toggle"
+	href="javascript:void(0);"> <i id="animate_bell"
+		class="ace-icon fa fa-bell"></i> <span class="badge badge-important">{{msgData.total}}</span>
+	</a>
+	<ul
+		class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+		<li class="dropdown-header"><i
+			class="ace-icon fa fa-exclamation-triangle"></i>显示最新 {{msgData.pageSize}}条通知</li>
+		<li ng-repeat="msg in msgData.contents"><a href="javascript:void(0);"
+			ng-click="viewMessageDialog(msg.id)">
+				<div class="clearfix">
+					<span class="pull-left"> <i
+						class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
+						{{msg.title}}
+					</span> <span class="pull-right badge badge-info">未读</span>
+				</div>
+		</a></li>
+		<li class="dropdown-footer"><a href="#/f/UserMessageList">
+				查看所有通知 <i class="ace-icon fa fa-arrow-right"></i>
+		</a></li>
+	</ul>
+</li>

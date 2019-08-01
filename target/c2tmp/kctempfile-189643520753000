@@ -1,0 +1,13 @@
+
+
+page_onload:function(){
+	console.log(456);
+},
+
+
+button_click:function($event){
+	var sdf= $params.time;
+	var edf = $params.time2;
+	console.log("取值："+$event.time);
+	$model.TaskChart.$load({startDate:sdf,endDate:edf});
+}

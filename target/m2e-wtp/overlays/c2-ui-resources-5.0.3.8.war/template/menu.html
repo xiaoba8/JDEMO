@@ -1,0 +1,11 @@
+<li ng-repeat="menu in currMenus" id="menu_{{menu.$$hashKey}}" ng-class="{open:menu.open,active:menu.active,hsub:menu.c.length>0}" class="hover">
+	<a	ng-href="{{menu.l}}" ng-class="{'dropdown-toggle' : menu.c.length>0}" ng-click="onMenuClick(menu)" target="{{menu.o}}"> 
+		<i class="menu-icon fa {{menu.i}}" ng-if="menu.i!=''"></i>
+		<span class="menu-text" ng-bind="menu.t"></span>
+		<b class="arrow fa" ng-class="{'fa-angle-down':menu.isDown,'fa-angle-up':!menu.isDown}" ng-if="menu.c.length > 0"></b>
+	</a>
+	<b class="arrow" ng-if="menu.c.length > 0"></b>
+	
+	<ul class="submenu" c2-menu="menu.c" ng-if="menu.c.length > 0" ng-style="getLoadStyle(menu);">
+	</ul>
+</li>

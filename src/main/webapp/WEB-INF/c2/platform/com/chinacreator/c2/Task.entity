@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity:Entity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdata="http://www.chinacreator.com/platform/mvc/cdata" xmlns:docket="http://www.chinacreator.com/platform/mvc/docket" xmlns:entity="http://www.chinacreator.com/platform/mvc/entity" dbType="Oracle" sn="task">
+  <docket:name>任务</docket:name>
+  <docket:createType>来自数据库</docket:createType>
+  <docket:primaryKey>
+    <docket:pkAttribute attribute="id" docketId="entity:com.chinacreator.c2.Task" type="UUID"/>
+  </docket:primaryKey>
+  <docket:attributes>
+    <docket:attribute code="id" length="64" name="id" nullable="false" type="string64" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="project_id" length="36" name="name" nullable="true" type="string64" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="year" length="7" name="year" nullable="true" type="date" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+  </docket:attributes>
+  <docket:subDokcets/>
+  <docket:events/>
+  <docket:table ds="1" table="E_TASK"/>
+  <docket:cache>false</docket:cache>
+  <docket:sequenceName>E_TASK_SEQ</docket:sequenceName>
+  <docket:restResource>true</docket:restResource>
+  <entity:datas/>
+  <entity:views/>
+</entity:Entity>
