@@ -45,8 +45,16 @@
     <form:child xsi:type="form:Field" binding="$model.TotalCount.cot" id="cot" name="任务统计">
       <form:control type="widget/text">
         <form:attributes source="widget/text">
-          <dync:attribute default="6" group="基本设置" id="span" name="占位数" value="4">
+          <dync:attribute default="6" group="基本设置" id="span" name="占位数" value="2">
             <dync:render colSpan="1" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="false" group="文本框设置" id="disabled" name="禁用" value="true">
+            <dync:render colSpan="1" height="0" multi="false" name="checkboxAndExpr"/>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="false" group="输入框组" id="hiddenInput" name="隐藏文本框" value="true">
+            <dync:render colSpan="1" height="0" multi="false" name="checkbox"/>
             <dync:children/>
           </dync:attribute>
         </form:attributes>
@@ -55,29 +63,36 @@
     <form:child xsi:type="form:Field" binding="$model.DelayCount.cot" id="DelayCount" name="过期统计">
       <form:control type="widget/text">
         <form:attributes source="widget/text">
-          <dync:attribute default="6" group="基本设置" id="span" name="占位数" value="4">
+          <dync:attribute default="6" group="基本设置" id="span" name="占位数" value="2">
             <dync:render colSpan="1" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="false" group="文本框设置" id="disabled" name="禁用" value="true">
+            <dync:render colSpan="1" height="0" multi="false" name="checkboxAndExpr"/>
             <dync:children/>
           </dync:attribute>
         </form:attributes>
       </form:control>
     </form:child>
-    <form:child xsi:type="form:Field" id="button" name="查询" customize="true">
-      <form:control type="widget/button">
-        <form:attributes source="widget/button">
-          <dync:attribute default="btn-primary" group="HTML设置" id="style" name="样式" value="btn-default">
-            <dync:render colSpan="1" height="0" multi="false" name="select">
-              <dync:item name="默认" value="btn-default"/>
-              <dync:item name="主要" value="btn-primary"/>
-              <dync:item name="成功" value="btn-success"/>
-              <dync:item name="信息" value="btn-info"/>
-              <dync:item name="警告" value="btn-warning"/>
-              <dync:item name="危险" value="btn-danger"/>
-              <dync:item name="链接" value="btn-link"/>
-              <dync:item name="通用" value="btn-white no-border"/>
-            </dync:render>
+  </form:child>
+  <form:child xsi:type="form:Group" id="div2" name="简单容器(DIV)">
+    <form:control type="container/div">
+      <form:attributes source="container/div"/>
+    </form:control>
+    <form:child xsi:type="form:Field" binding="$params.startDate" id="text" name="开始时间" customize="true">
+      <form:control type="widget/date_picker">
+        <form:attributes source="widget/date_picker">
+          <dync:attribute default="6" group="基本设置" id="span" name="控件宽度" value="4">
+            <dync:render colSpan="1" height="0" multi="false" name="text"/>
             <dync:children/>
           </dync:attribute>
+        </form:attributes>
+      </form:control>
+      <form:validation/>
+    </form:child>
+    <form:child xsi:type="form:Field" id="button" name="显示时间段内任务汇总" customize="true">
+      <form:control type="widget/button">
+        <form:attributes source="widget/button">
           <dync:attribute default="" group="事件设置" id="click" name="点击事件" value="button_click($event)">
             <dync:render colSpan="1" height="0" multi="false" name="event">
               <dync:item name="params" value="$event"/>
@@ -88,14 +103,14 @@
       </form:control>
       <form:validation/>
     </form:child>
-  </form:child>
-  <form:child xsi:type="form:Group" id="div2" name="简单容器(DIV)">
-    <form:control type="container/div">
-      <form:attributes source="container/div"/>
-    </form:control>
-    <form:child xsi:type="form:Group" id="div1" name="简单容器(DIV)">
-      <form:control type="container/div">
-        <form:attributes source="container/div"/>
+    <form:child xsi:type="form:Field" binding="$params.endDate" id="endDate" name="结束时间">
+      <form:control type="widget/date_picker">
+        <form:attributes source="widget/date_picker">
+          <dync:attribute default="6" group="基本设置" id="span" name="控件宽度" value="4">
+            <dync:render colSpan="1" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
       </form:control>
     </form:child>
     <form:child xsi:type="form:Field" binding="$model.TaskChart.EchartData" id="TaskChart1" name="服务数据源">
@@ -117,6 +132,10 @@
     </form:child>
   </form:child>
   <form:datasources>
+    <form:datasource xsi:type="form:Inputs">
+      <form:input desc="报表参数" id="startDate" name="开始日期"/>
+      <form:input desc="报表" id="endDate" name="结束时间"/>
+    </form:datasource>
     <form:datasource xsi:type="form:LogicDataSource" id="TotalCount" name="总任务" sn="TaskCount" logic="rule:com.chinacreator.c2.TaskCount"/>
     <form:datasource xsi:type="form:LogicDataSource" id="DelayCount" name="过期任务" sn="TaskDelay" logic="rule:com.chinacreator.c2.TaskDelay"/>
     <form:datasource xsi:type="form:LogicDataSource" id="TaskChart" name="图表" sn="TaskChart" logic="rule:com.chinacreator.c2.statistic">
@@ -127,14 +146,22 @@
   <form:scripts>
 
 page_onload:function(){
-	console.log(456);
+	$params.startDate=&quot;2019-01-01&quot;;
+	$params.endDate=&quot;2019-08-03&quot;;
 },
 
 
 button_click:function($event){
-	var sdf= $params.time;
-	var edf = $params.time2;
-	console.log(&quot;取值：&quot;+$event.time);
+	var sdf= $params.startDate;
+	var edf = $params.endDate;
+	if(!sdf){
+		Messenger.post({type:'info',message:'请选择开始时间！'});
+		return;
+	}else if(!edf){
+		Messenger.post({type:'info',message:'请选择结束时间！'});
+		return;
+	
+	}
 	$model.TaskChart.$load({startDate:sdf,endDate:edf});
 }</form:scripts>
   <form:htmls></form:htmls>

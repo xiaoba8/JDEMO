@@ -1,13 +1,13 @@
 <div ng-controller="HomeController">
-<h1>Hello,{{realname}}.</h1><br />
+<h1>Hello,{{realname}}</h1><br />
 <h1>这是一个自定义的首页!</h1>
 </div>
 
 <script type="text/javascript">
 	app.registerCtrl('HomeController', ['$scope','$http',function ($scope,$http) {
-		$http.get("v1/currentuser").success(function (data) {
-        	 console.log(data)
-        	  $scope.realname = data.realname;
-        });
+
+		$scope.realname = "Jacson";
 	}]);
+	
+	
 </script>

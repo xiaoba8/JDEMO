@@ -30,12 +30,10 @@
         <dync:render/>
         <dync:children/>
       </dync:attribute>
-      <dync:attribute default="" group="事件" id="beforeDataSourceLoad" name="数据源加载前" value="">
-        <dync:render/>
-        <dync:children/>
-      </dync:attribute>
-      <dync:attribute default="" group="事件" id="afterDataSourceLoad" name="数据源加载后" value="">
-        <dync:render/>
+      <dync:attribute default="" group="事件" id="onload" name="页面加载完成" value="page_onload()">
+        <dync:render colSpan="2" height="0" multi="false" name="event">
+          <dync:item name="param" value=""/>
+        </dync:render>
         <dync:children/>
       </dync:attribute>
     </form:attributes>
@@ -46,24 +44,125 @@
     </form:control>
     <form:child xsi:type="form:Field" binding="$model.TotalCount.cot" id="cot" name="任务统计">
       <form:control type="widget/text">
-        <form:attributes source="widget/text"/>
+        <form:attributes source="widget/text">
+          <dync:attribute default="6" group="基本设置" id="span" name="占位数" value="2">
+            <dync:render colSpan="1" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="false" group="文本框设置" id="disabled" name="禁用" value="true">
+            <dync:render colSpan="1" height="0" multi="false" name="checkboxAndExpr"/>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="false" group="输入框组" id="hiddenInput" name="隐藏文本框" value="true">
+            <dync:render colSpan="1" height="0" multi="false" name="checkbox"/>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
       </form:control>
     </form:child>
-    <form:child xsi:type="form:Field" binding="$model.TotalCount.cot" id="cot1" name="过期统计">
+    <form:child xsi:type="form:Field" binding="$model.DelayCount.cot" id="DelayCount" name="过期统计">
       <form:control type="widget/text">
-        <form:attributes source="widget/text"/>
+        <form:attributes source="widget/text">
+          <dync:attribute default="6" group="基本设置" id="span" name="占位数" value="2">
+            <dync:render colSpan="1" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="false" group="文本框设置" id="disabled" name="禁用" value="true">
+            <dync:render colSpan="1" height="0" multi="false" name="checkboxAndExpr"/>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
+      </form:control>
+    </form:child>
+  </form:child>
+  <form:child xsi:type="form:Group" id="div2" name="简单容器(DIV)">
+    <form:control type="container/div">
+      <form:attributes source="container/div"/>
+    </form:control>
+    <form:child xsi:type="form:Field" binding="$params.startDate" id="text" name="开始时间" customize="true">
+      <form:control type="widget/date_picker">
+        <form:attributes source="widget/date_picker">
+          <dync:attribute default="6" group="基本设置" id="span" name="控件宽度" value="4">
+            <dync:render colSpan="1" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
+      </form:control>
+      <form:validation/>
+    </form:child>
+    <form:child xsi:type="form:Field" id="button" name="显示时间段内任务汇总" customize="true">
+      <form:control type="widget/button">
+        <form:attributes source="widget/button">
+          <dync:attribute default="" group="事件设置" id="click" name="点击事件" value="button_click($event)">
+            <dync:render colSpan="1" height="0" multi="false" name="event">
+              <dync:item name="params" value="$event"/>
+            </dync:render>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
+      </form:control>
+      <form:validation/>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$params.endDate" id="endDate" name="结束时间">
+      <form:control type="widget/date_picker">
+        <form:attributes source="widget/date_picker">
+          <dync:attribute default="6" group="基本设置" id="span" name="控件宽度" value="4">
+            <dync:render colSpan="1" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.TaskChart.EchartData" id="TaskChart1" name="服务数据源">
+      <form:control type="widget/echarts_bar">
+        <form:attributes source="widget/echarts_bar">
+          <dync:attribute default="200" group="基本设置" id="height" name="图表高度(px)" value="350">
+            <dync:render colSpan="1" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="end" group="横轴数组" id="xaxisNameLocation" name="横轴名称位置" value="start">
+            <dync:render colSpan="1" height="0" multi="false" name="select">
+              <dync:item name="开始处" value="start"/>
+              <dync:item name="结束处" value="end"/>
+            </dync:render>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
       </form:control>
     </form:child>
   </form:child>
   <form:datasources>
+    <form:datasource xsi:type="form:Inputs">
+      <form:input desc="报表参数" id="startDate" name="开始日期"/>
+      <form:input desc="报表" id="endDate" name="结束时间"/>
+    </form:datasource>
     <form:datasource xsi:type="form:LogicDataSource" id="TotalCount" name="总任务" sn="TaskCount" logic="rule:com.chinacreator.c2.TaskCount"/>
     <form:datasource xsi:type="form:LogicDataSource" id="DelayCount" name="过期任务" sn="TaskDelay" logic="rule:com.chinacreator.c2.TaskDelay"/>
     <form:datasource xsi:type="form:LogicDataSource" id="TaskChart" name="图表" sn="TaskChart" logic="rule:com.chinacreator.c2.statistic">
-      <form:param id="startDate" name="新输入参数"/>
-      <form:param id="endDate" name="新输入参数"/>
+      <form:param id="startDate" name="新输入参数" value="1356969600000"/>
+      <form:param id="endDate" name="新输入参数" value="1564647735395"/>
     </form:datasource>
   </form:datasources>
   <form:scripts>
 
-</form:scripts>
+page_onload:function(){
+	$params.startDate=&quot;2019-01-01&quot;;
+	$params.endDate=&quot;2019-08-03&quot;;
+},
+
+
+button_click:function($event){
+	var sdf= $params.startDate;
+	var edf = $params.endDate;
+	if(!sdf){
+		Messenger.post({type:'info',message:'请选择开始时间！'});
+		return;
+	}else if(!edf){
+		Messenger.post({type:'info',message:'请选择结束时间！'});
+		return;
+	
+	}
+	$model.TaskChart.$load({startDate:sdf,endDate:edf});
+}</form:scripts>
+  <form:htmls></form:htmls>
 </form:Form>

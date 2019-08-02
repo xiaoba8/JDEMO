@@ -1,0 +1,21 @@
+
+
+page_onload:function(){
+	$params.startDate="2019-01-01";
+	$params.endDate="2019-08-03";
+},
+
+
+button_click:function($event){
+	var sdf= $params.startDate;
+	var edf = $params.endDate;
+	if(!sdf){
+		Messenger.post({type:'info',message:'请选择开始时间！'});
+		return;
+	}else if(!edf){
+		Messenger.post({type:'info',message:'请选择结束时间！'});
+		return;
+	
+	}
+	$model.TaskChart.$load({startDate:sdf,endDate:edf});
+}
